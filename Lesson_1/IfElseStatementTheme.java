@@ -48,15 +48,15 @@ public class IfElseStatementTheme {
         if(num > 0) {
             if(num % 2 == 0) {
                 System.out.println("Число = " + num + " является четным");
-        } else {
+            } else {
                  System.out.println("Число = " + num + " является нечетным");
-        }
+            }
 
-        if(num < 0) {
-            System.out.println("Число = " + num + " является отрицательным");
-        } else {
-            System.out.println("Число = " + num + " является положительным\n");
-        }
+            if(num < 0) {
+               System.out.println("Число = " + num + " является отрицательным");
+            } else {
+                System.out.println("Число = " + num + " является положительным\n");
+            }
         }
 
         System.out.println("Задача №4 Поиск одинаковых цифр в числах\n");
@@ -90,15 +90,14 @@ public class IfElseStatementTheme {
 
         System.out.println("Задача №5 Определение буквы, числа или символа по их коду\n");
         char uncknownChar = '\u0057';
-        if(uncknownChar >='A' && uncknownChar <='Z' || uncknownChar >='a' && uncknownChar <='z') { // определяю, что это код буквы
-            System.out.println("Маленькая буква " + (uncknownChar += 32));
-            System.out.println("Большая буква " + (uncknownChar -= 32));
-            System.out.println("Число " + (int) uncknownChar);
-            System.out.println("Не буква и не число " + (uncknownChar = 0) + "\n");
-        } else if(uncknownChar >='0' && uncknownChar <='9') {
-            System.out.println("Является кодом числа " + uncknownChar + "\n");
+        if(uncknownChar >='a' && uncknownChar <='z') {
+            System.out.println("Маленькая буква " + uncknownChar + "\n");
+        } else if(uncknownChar >='A' && uncknownChar <= 'Z') {
+            System.out.println("Большая буква " + uncknownChar + "\n");
+        } else if(uncknownChar >= '0' && uncknownChar <= '9') {
+            System.out.println("Является числом " + uncknownChar + "\n");
         } else {
-            System.out.println("Является другим символом " + uncknownChar + "\n");
+            System.out.println("Не буква и не число " + uncknownChar + "\n");
         }
 
         System.out.println("Задача №6 Определение суммы вклада и начисленных банком %\n");
@@ -179,9 +178,9 @@ public class IfElseStatementTheme {
         System.out.println("Номиналы банкнот: 1, 10 , 100");
         if(onesBanknote != banknoteValue1 || dozensBanknote != banknoteValue10 || hundredsBanknote
                 != banknoteValue100) {
-        int missingAmount = mustBeRemoved - banknoteValue10 * 10;
-        banknoteValue100 = missingAmount % 8;
-        banknoteValue1 = missingAmount - 500;
+            int missingAmount = mustBeRemoved - banknoteValue10 * 10;
+            banknoteValue100 = missingAmount % 8;
+            banknoteValue1 = missingAmount - 500;
         }
         System.out.println("Требуемое количество банкнот: " + "номинал 100 - " + banknoteValue100
                 + "; " + " номинал 10 - "  + banknoteValue10 + "; " + " номинал 1 - " + banknoteValue1);
