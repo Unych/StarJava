@@ -2,7 +2,7 @@ public class CyclesTheme {
 
     public static void main(String[] args) {
         System.out.println("Задача №1 Подсчет суммы четных и нечетных чисел\n");
-        int counter = - 10;
+        int counter = -10;
         int sumEven = 0;
         int sumOdd = 0;
         do {
@@ -12,8 +12,7 @@ public class CyclesTheme {
                    sumOdd += counter;
                 }
                 counter++;
-        }
-        while( counter <= 21 );
+        } while(counter <= 21);
         System.out.println("В промежутке [-10, 21] сумма четных чисел = "+ sumEven + 
                     " а нечетных = "+ sumOdd);
 
@@ -43,9 +42,9 @@ public class CyclesTheme {
         int num = 1234;
         int sumDigits = 0;
         while(num > 0) {
-            int digits = num % 10;
-            System.out.print(digits);
-            sumDigits += digits;
+            int digit = num % 10;
+            System.out.print(digit);
+            sumDigits += digit;
             num /= 10;
         }
         System.out.println("\n" + sumDigits);
@@ -197,9 +196,5 @@ public class CyclesTheme {
             }
             System.out.println();
             }
-
-
-
-
     }
 }
