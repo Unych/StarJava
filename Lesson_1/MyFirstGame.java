@@ -15,6 +15,6 @@ public class MyFirstGame {
                 System.out.println("Число " + playerNum + " больше того, что загадал компьютер");
             }
         }
-            System.out.println("Вы победили! число " + playerNum + " = " + hiddenNum);
+        System.out.println("Вы победили! число " + playerNum + " = " + hiddenNum);
     }
 }
