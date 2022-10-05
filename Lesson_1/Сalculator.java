@@ -22,10 +22,5 @@ public class Сalculator {
             }
         }
         System.out.print(num1 + " " + sign + " " + num2 + " = " + result);
-
-
-
-
-
     }
 }
