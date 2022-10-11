@@ -10,39 +10,39 @@ public class Wolf {
         return gender;
     }
 
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getColor() {
         return color;
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public double getWeight() {
         return weight;
+    }
+
+    public void setWight(double weight) {
+        this.weight = weight;
     }
 
     public int getAge() {
         return age;
     }
 
-    void setName(String name) {
-        this.name = name;
-    }
-
-    void setGender(char gender) {
-        this.gender = gender;
-    }
-
-    void setColor(String color) {
-        this.color = color;
-    }
-
-    void setWight(double weight) {
-        this.weight = weight;
-    }
-
-    void setAge(int age) {
+    public void setAge(int age) {
         if(age > 8) {
             System.out.println("Некорректный возраст");
         } else {
