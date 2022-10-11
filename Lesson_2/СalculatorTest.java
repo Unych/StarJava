@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class СalculatorTest {
 
     public static void main(String[] args) {
-            Сalculator calculatorOne = new Сalculator();
-            Scanner scanner = new Scanner(System.in);
-            String answer = "yes";
+        Сalculator calculatorOne = new Сalculator();
+        Scanner scanner = new Scanner(System.in);
+        String answer = "yes";
         do {
             if("yes".equals(answer)) {
                 System.out.println("Введите первое число:");
