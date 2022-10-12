@@ -7,7 +7,6 @@ public class Jaeger {
     private double weight;
 
     public Jaeger() {
-
     }
 
     public Jaeger(String mark, String origin, int speed, double height, double weight) {
@@ -66,7 +65,4 @@ public class Jaeger {
         System.out.println(mark + " Вошел в дрифт");
         return true;
     }
-
-
-
 }

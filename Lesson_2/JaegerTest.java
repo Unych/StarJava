@@ -19,6 +19,5 @@ public class JaegerTest {
                 + "\nВысота " + jaegerTwo.getHeight() + "\nШирина " + jaegerTwo.getWeight());
         jaegerOne.move();
         jaegerOne.drift();
-
-}
+    }
 }

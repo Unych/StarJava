@@ -12,39 +12,36 @@ public class Сalculator {
         this.num2 = num2;
     }
 
-    public void setSign (char sign) {
+    public void setSign(char sign) {
         this.sign = sign;
     }
 
-    public void resultCalc() {
+    public void calculation() {
         int result = 1;
         switch(sign) {
-        case '+' :
-            result = num1 + num2;
-            break;
-        case '-' :
-            result = num1 - num2;
-            break;
-        case '*' :
-            result = num1 * num2;
-            break;
-        case '/' :
-            result = num1 / num2;
-            break;
-        case '%' :
-            result = num1 % num2;
-            break;
-        case '^' :
-            for(int i = 1; i <= num2; i++) {
-                result *= num1;
+            case '+' :
+                result = num1 + num2;
+                break;
+            case '-' :
+                result = num1 - num2;
+                break;
+            case '*' :
+                result = num1 * num2;
+                break;
+            case '/' :
+                result = num1 / num2;
+                break;
+            case '%' :
+                result = num1 % num2;
+                break;
+            case '^' :
+                for(int i = 1; i <= num2; i++) {
+                    result *= num1;
+                    }
+                    break;
+            default :
+                System.out.println("Вы вели неправильный символ");
         }
-        break;
-        default :
-            System.out.println("Вы вели неправильный символ");
+        System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
     }
-    System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
-}
-
-
-
 }
