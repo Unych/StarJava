@@ -37,8 +37,8 @@ public class Сalculator {
             case '^' :
                 for(int i = 1; i <= num2; i++) {
                     result *= num1;
-                    }
-                    break;
+                }
+                break;
             default :
                 System.out.println("Вы вели неправильный символ");
         }
