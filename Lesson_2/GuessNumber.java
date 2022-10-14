@@ -17,30 +17,30 @@ public class GuessNumber {
         while(playerOne.getNumber() != hiddenNum) {
             System.out.println("Игрок " + playerOne.getName() + " Введите число");
             playerOne.setNumber(scanner.nextInt());
-            if (playerOne.getNumber() < hiddenNum) {
-                System.out.println("Число " + playerOne.getNumber() + 
-                        " меньше того, что загадал компьютер");
+            if (playerOne.getNumber() == hiddenNum) {
+                System.out.println(playerOne.getName() + " Вы победили! число " + 
+                        playerOne.getNumber() + " = " + hiddenNum);
+                break;
             } else if (playerOne.getNumber() > hiddenNum) {
                 System.out.println("Число " + playerOne.getNumber() + 
                         " больше того, что загадал компьютер");
             } else {
-                System.out.println(playerOne.getName() + " Вы победили! число " + 
-                        playerOne.getNumber() + " = " + hiddenNum);
-                break;
+               System.out.println("Число " + playerOne.getNumber() + 
+                        " меньше того, что загадал компьютер");
             }
             System.out.println("Игрок " + playerTwo.getName() + " Введите число");
 
             playerTwo.setNumber(scanner.nextInt());
-            if (playerTwo.getNumber() < hiddenNum) {
-                System.out.println("Число " + playerTwo.getNumber() + 
-                        " меньше того, что загадал компьютер");
+            if (playerTwo.getNumber() == hiddenNum) {
+                System.out.println(playerTwo.getName() + " Вы победили! число "
+                     + playerTwo.getNumber() + " = " + hiddenNum);
+                break;
             } else if (playerTwo.getNumber() > hiddenNum) {
                 System.out.println("Число " + playerTwo.getNumber() + 
                         " больше того, что загадал компьютер");
             } else {
-                System.out.println(playerTwo.getName() + " Вы победили! число "
-                     + playerTwo.getNumber() + " = " + hiddenNum);
-                break;
+                System.out.println("Число " + playerTwo.getNumber() + 
+                        " меньше того, что загадал компьютер");
             }
         }
     }
