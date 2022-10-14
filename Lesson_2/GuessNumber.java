@@ -14,14 +14,14 @@ public class GuessNumber {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int hiddenNum = random.nextInt((100) + 1);
-        while(playerOne.getNumber() != hiddenNum) {
+        while(true) {
             System.out.println("Игрок " + playerOne.getName() + " Введите число");
             playerOne.setNumber(scanner.nextInt());
             if (playerOne.getNumber() == hiddenNum) {
                 System.out.println(playerOne.getName() + " Вы победили! число " + 
                         playerOne.getNumber() + " = " + hiddenNum);
                 break;
-            } else if (playerOne.getNumber() > hiddenNum) {
+            } if (playerOne.getNumber() > hiddenNum) {
                 System.out.println("Число " + playerOne.getNumber() + 
                         " больше того, что загадал компьютер");
             } else {
@@ -35,7 +35,7 @@ public class GuessNumber {
                 System.out.println(playerTwo.getName() + " Вы победили! число "
                      + playerTwo.getNumber() + " = " + hiddenNum);
                 break;
-            } else if (playerTwo.getNumber() > hiddenNum) {
+            } if (playerTwo.getNumber() > hiddenNum) {
                 System.out.println("Число " + playerTwo.getNumber() + 
                         " больше того, что загадал компьютер");
             } else {
