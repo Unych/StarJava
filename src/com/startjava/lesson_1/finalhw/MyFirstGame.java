@@ -1,9 +1,8 @@
 package com.startjava.lesson_1.finalhw;
 
 public class MyFirstGame {
-
     public static void main(String[] args) {
-        
+
         int hiddenNum = 37;
         int playerNum = 89;
         int startRange = 1;
