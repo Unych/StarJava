@@ -7,7 +7,7 @@ public class ArrayTheme {
         System.out.println("\nЗадача №1 Реверс значений массива");
         int[] intArr = {1, 4, 5, 2, 7, 3};
         int length = intArr.length;
-        System.out.print(Arrays.toString(intArr) + System.lineSeparator());
+        System.out.println(Arrays.toString(intArr));
         for(int i = 0; i < length; i++) {
             int temp = intArr[i];
             intArr[i] = intArr[--length];
@@ -23,6 +23,7 @@ public class ArrayTheme {
         }
         int multDigits = 1;
         for(int i = 1; i < length - 1; i++) {
+            intArr[i] = i;
             multDigits *= intArr[i];
             System.out.print(i < 8 ? i + " * " : i + " = " + multDigits);
         }
@@ -50,31 +51,31 @@ public class ArrayTheme {
         System.out.println("\nКоличество обнуленных ячеек: " + zeroedCellCount);
 
         System.out.println("\nЗадача №4 Вывод элементов массива лесенкой в обратном порядке");
-        char[] engLetters  = new char['Z' - 'A' + 1];
-        length = engLetters .length;
+        char[] engAlphabet  = new char['Z' - 'A' + 1];
+        length = engAlphabet.length;
         for (int i = 0; i < length; i++) {
-            engLetters [i] = (char) ('A' + i);
+            engAlphabet [i] = (char) ('A' + i);
         }
 
         for (int i = 0; i < length; i++) {
             for (int j = length - 1; j >= length - 1 - i; j--) {
-                System.out.print(engLetters [j]);
+                System.out.print(engAlphabet[j]);
             }
             System.out.println();
         }
 
         System.out.println("\nЗадача №5 Генерация уникальных чисел");
         intArr = new int[30];
+        int num = 60;
         length = intArr.length;
-        int random = (int) (Math.random() * 40) + 60;
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
-                if (intArr[j] == random) {
-                    random = (int) (Math.random() * 40) + 60;
+                if (intArr[j] == num) {
+                    num = (int) (Math.random() * 40) + 60;
                     j = - 1;
                 }
             }
-            intArr[i] = random;
+            intArr[i] = num;
         }
 
         Arrays.sort(intArr);
@@ -86,8 +87,8 @@ public class ArrayTheme {
             }
         }
     }
-    private static void printDoubleArr(double[] arr) {
 
+    private static void printDoubleArr(double[] arr) {
         int numPosition = 0;
         for (double num : arr) {
             System.out.printf("%6.3f", num);
