@@ -1,41 +1,35 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
-        private String expression;
 
-        public void setExpression(String expression) {
-            this.expression = expression;
-        }
-
-
-    public void calculate() {
-        String[] arrnum = expression.split(" ");
-        int indexZero = Integer.parseInt(String.valueOf(Integer.parseInt(arrnum[0])));
-        int indexTwo = Integer.parseInt(String.valueOf(Integer.parseInt(arrnum[2])));
-        String sign = arrnum[1];
+    public int calculate(String expression) {
+        String[] partsExpression = expression.split(" ");
+        int numOne = Integer.parseInt(partsExpression[0]);
+        int numTwo = Integer.parseInt(partsExpression[2]);
+        String sign = partsExpression[1];
         int result = 1;
         switch(sign) {
             case "+" :
-                result = Math.addExact(indexZero, indexTwo);
+                result = Math.addExact(numOne, numTwo);
                 break;
             case "-" :
-                result = Math.subtractExact(indexZero, indexTwo);
+                result = Math.subtractExact(numOne, numTwo);
                 break;
             case "*" :
-                result = Math.multiplyExact(indexZero, indexTwo);
+                result = Math.multiplyExact(numOne, numTwo);
                 break;
             case "/" :
-                result = indexZero / indexTwo;
+                result = numOne / numTwo;
                 break;
             case "%" :
-                result = indexZero % indexTwo;
+                result = numOne % numTwo;
                 break;
             case "^" :
-                result = (int) Math.pow(indexZero, indexTwo);
+                result = (int) Math.pow(numOne, numTwo);
                 break;
             default :
                 System.out.println("Вы вели неправильный символ");
         }
-        System.out.println(indexZero + " " + sign + " " + indexTwo + " = " + result);
+        return result;
     }
 }
