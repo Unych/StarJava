@@ -5,13 +5,16 @@ import java.util.Scanner;
 public class CalculatorTest {
 
     public static void main(String[] args) {
-        Calculator calculatorOne = new Calculator();
         Scanner scanner = new Scanner(System.in);
         String answer = "yes";
         do {
             if("yes".equals(answer)) {
                 System.out.print("Введите математическое выражение: ");
-                System.out.println("Результат вычисления: " + calculatorOne.calculate(scanner.nextLine()));
+                try {
+                    System.out.println("Результат вычисления: " + Calculator.calculate(scanner.nextLine()));
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Ошибка, введен не правильный символ: " + e.getMessage());
+                }
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]: ");
             answer = scanner.nextLine();
