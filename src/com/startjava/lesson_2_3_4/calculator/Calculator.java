@@ -27,7 +27,7 @@ public class Calculator {
             case "/" -> numOne / numTwo;
             case "%" -> numOne % numTwo;
             case "^" -> (int) Math.pow(numOne, numTwo);
-            default -> throw new IllegalArgumentException("Введен не правильный символ" + sign);
+            default -> throw new IllegalArgumentException("Введен не правильный символ " + sign);
         };
     }
 

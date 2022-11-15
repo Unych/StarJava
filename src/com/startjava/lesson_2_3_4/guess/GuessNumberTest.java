@@ -5,19 +5,21 @@ import java.util.Scanner;
 public class GuessNumberTest {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("У каждого игрока по 10 попыток\n");
         System.out.print("Введите имя первого игрока: ");
-        Player playerOne = new Player(scanner.nextLine());
+        Scanner console = new Scanner(System.in);
+        Player player1 = new Player(console.nextLine());
         System.out.print("Введите имя второго игрока: ");
-        Player playerTwo = new Player(scanner.nextLine());
-        GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
-        String answer = "yes";
-        do {
-            if("yes".equals(answer)) {
-                guessNumber.startRound();
-            }
-            System.out.print("Хотите продолжить игру? [yes/no]: ");
-            answer = scanner.nextLine();
-        } while (!"no".equals(answer));
+        Player player2 = new Player(console.nextLine());
+        GuessNumber game = new GuessNumber(player1, player2);
+
+        String option = "yes";
+        while (option.equals("yes")) {
+            game.start();
+            do {
+                System.out.print("\n\nХотите продолжить игру? [yes/no]: ");
+                option = console.nextLine();
+            } while (!option.equals("yes") && !option.equals("no"));
+        }
     }
 }
