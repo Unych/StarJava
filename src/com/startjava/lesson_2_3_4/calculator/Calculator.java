@@ -7,7 +7,7 @@ public class Calculator {
     private static String sign;
 
     public static int calculate(String expression) {
-        splitarr(expression);
+        parseExpression(expression);
         return switch (sign) {
             case "+" -> Math.addExact(numOne, numTwo);
             case "-" -> Math.subtractExact(numOne, numTwo);
@@ -19,7 +19,7 @@ public class Calculator {
         };
     }
 
-    private static void splitarr(String expression) {
+    private static void parseExpression(String expression) {
         String[] partsExpression = expression.split(" ");
         if (partsExpression.length != 3) {
             throw new IllegalArgumentException("Выражение должно состоять из трех частей, разделенных пробелами!");
