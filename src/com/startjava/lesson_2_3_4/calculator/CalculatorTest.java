@@ -13,7 +13,7 @@ public class CalculatorTest {
                 try {
                     System.out.println("Результат вычисления: " + Calculator.calculate(scanner.nextLine()));
                 } catch (IllegalArgumentException e) {
-                    System.err.println("Ошибка, введен не правильный символ: " + e.getMessage());
+                    System.err.println(e.getMessage());
                 }
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]: ");
