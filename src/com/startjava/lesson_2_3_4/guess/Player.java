@@ -3,13 +3,12 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 
 public class Player {
+    private String name;
+    private int[] numbers = new int[GuessNumber.ATTEMPTS];
+    private int attempt;
+    private int amountWins;
 
-    private final String name;
-    private final int[] numbers = new int[10];
-
-    private int move;
-
-    public Player(String name) {
+    Player(String name) {
         this.name = name;
     }
 
@@ -17,28 +16,40 @@ public class Player {
         return name;
     }
 
-    public int getNumber() {
-        return numbers[move - 1];
-    }
-
     public void addNumber(int number) {
-        numbers[move++] = number;
+        if (number > 0 && number <= 100) {
+            numbers[attempt++] = number;
+        } else {
+            throw new NumberFormatException("Введите число в интервале от 1 до 100!");
+        }
     }
 
-    public int getMove() {
-        return move;
+    public int[] getNumbers() {
+        return Arrays.copyOf(numbers, attempt);
     }
 
-    public boolean hasMoves() {
-        return move < 10;
+    public int getAttempt() {
+        return attempt;
     }
 
-    public void reset() {
-        Arrays.fill(numbers, 0, move, 0);
-        move = 0;
+    public void setAmountWin() {
+        amountWins = 0;
     }
 
-    public int[] getAnswers() {
-        return Arrays.copyOf(numbers, move);
+    public int getAmountWins() {
+        return amountWins;
+    }
+
+    public void incAmountWin() {
+        amountWins++;
+    }
+
+    public void clearAttempts() {
+        Arrays.fill(numbers, 0, attempt, 0);
+        attempt = 0;
+    }
+
+    public boolean hasAttempt() {
+        return this.attempt < GuessNumber.ATTEMPTS;
     }
 }
