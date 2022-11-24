@@ -1,14 +1,13 @@
 package com.startjava.lesson_2_3_4.guess;
 
-import java.util.Arrays;
 import java.util.Scanner;
-import java.lang.Math;
 
 public class GuessNumber {
 
     private final static int AMOUNT_ROUNDS = 3;
     public final static int ATTEMPTS = 10;
     private int secretNumber;
+    private int rounds;
     private Player[] players;
     Scanner scanner = new Scanner(System.in);
 
@@ -16,10 +15,10 @@ public class GuessNumber {
         this.players = players;
     }
 
-    public void startGame() {
+    public void start() {
         castLots();
         for (Player player : players) {
-            player.setAmountWin();
+            player.setCountsWin();
         }
         int round = 1;
         while (round <= AMOUNT_ROUNDS) {
@@ -37,7 +36,7 @@ public class GuessNumber {
                         System.out.println("У " + player.getName() + " закончились попытки");
                         continue;
                     }
-                    if (isWin == isGuessed(player)) {
+                    if (isGuessed(player)) {
                         player.incAmountWin();
                         System.out.println(player.getAmountWins());
                         break;
@@ -107,24 +106,23 @@ public class GuessNumber {
     }
 
     private void findWinner() {
-        Player[] sortWinners = Arrays.copyOf(players, players.length);
         boolean isSorted = false;
         while (!isSorted) {
             isSorted = true;
-            for (int i = 1; i < sortWinners.length; i++) {
-                if (sortWinners[i].getAmountWins() > sortWinners[i - 1].getAmountWins()) {
+            for (int i = 1; i < players.length; i++) {
+                if (players[i].getAmountWins() > players[i - 1].getAmountWins()) {
                     isSorted = false;
-                    Player tmp = sortWinners[i];
-                    sortWinners[i] = sortWinners[i - 1];
-                    sortWinners[i - 1] = tmp;
+                    Player tmp = players[i];
+                    players[i] = players[i - 1];
+                    players[i - 1] = tmp;
                 }
             }
         }
-        int maxWin = sortWinners[0].getAmountWins();
+        int maxWin = players[0].getAmountWins();
         if (maxWin == 0) {
             System.out.println("Победил компьютер! Игроки не смогли угадать число))");
-        } else if (maxWin > 0 && maxWin > sortWinners[1].getAmountWins()) {
-            System.out.println(sortWinners[0].getName() + " победил, количество побед: " + maxWin);
+        } else if (maxWin > 0 && maxWin > players[1].getAmountWins()) {
+            System.out.println(players[0].getName() + " победил, количество побед: " + maxWin);
         } else {
             for (Player player : players) {
                 if (player.getAmountWins() == maxWin) {
@@ -134,4 +132,7 @@ public class GuessNumber {
             System.out.println("- сыграли в ничью, количество побед: " + maxWin);
         }
     }
+
+
+
 }

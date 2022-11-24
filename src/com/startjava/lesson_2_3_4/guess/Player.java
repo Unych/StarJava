@@ -6,7 +6,7 @@ public class Player {
     private String name;
     private int[] numbers = new int[GuessNumber.ATTEMPTS];
     private int attempt;
-    private int amountWins;
+    private int countWins;
 
     Player(String name) {
         this.name = name;
@@ -17,11 +17,10 @@ public class Player {
     }
 
     public void addNumber(int number) {
-        if (number > 0 && number <= 100) {
-            numbers[attempt++] = number;
-        } else {
+        if (number <= 0 || number > 100) {
             throw new NumberFormatException("Введите число в интервале от 1 до 100!");
         }
+        numbers[attempt++] = number;
     }
 
     public int[] getNumbers() {
@@ -32,16 +31,16 @@ public class Player {
         return attempt;
     }
 
-    public void setAmountWin() {
-        amountWins = 0;
+    public void setCountsWin() {
+        countWins = 0;
     }
 
     public int getAmountWins() {
-        return amountWins;
+        return countWins;
     }
 
     public void incAmountWin() {
-        amountWins++;
+        countWins++;
     }
 
     public void clearAttempts() {
@@ -50,6 +49,6 @@ public class Player {
     }
 
     public boolean hasAttempt() {
-        return this.attempt < GuessNumber.ATTEMPTS;
+        return attempt < GuessNumber.ATTEMPTS;
     }
 }
