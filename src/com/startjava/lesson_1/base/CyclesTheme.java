@@ -3,7 +3,7 @@ package com.startjava.lesson_1.base;
 public class CyclesTheme {
 
     public static void main(String[] args) {
-        System.out.println("Задач №1 Подсчет суммы четных и нечетных чисел\n");
+        System.out.println("Задача №1 Подсчет суммы четных и нечетных чисел\n");
         int counter = -10;
         int sumEven = 0;
         int sumOdd = 0;
